@@ -35,18 +35,17 @@ function removeOpacity(event) {
     event.preventDefault();    
 }
 
+//using target to grab the target element
 function getProductInfo(target) {  // select img elements  
-    // let img = document.getElementsByTagName('img')
 
-
-    // for (var i = 0; i < img.length; i++) {  
-    //     img[i]      
-    // }
 
    let colorPrice =  document.getElementById('color-price');
+   //setting the color-price with the data price
    colorPrice.textContent = target.getAttribute('data-price')
 
     let colorName = document.getElementById('color-name');
+
+//setting the color-name with the alt tag
     colorName.textContent = target.getAttribute('alt');
 }
 // function getProductInfo(price, colorName) {
