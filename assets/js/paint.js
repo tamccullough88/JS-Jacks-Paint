@@ -7,14 +7,16 @@ function configureListeners() {
         document.getElementById(images[i].id).addEventListener('mouseout', removeOpacity, false)
         // iterate over images and add mouseover event listeners      
     } 
+
 }
+
 
 function addOpacity(event) {
     if (!this.classList.contains('dim')){
         this.classList.add('dim')
     }
     // add appropriate CSS class
-    getProductInfo(event.target.id);     
+    getProductInfo(event.target);   
 }
 
 function removeOpacity(event) {
@@ -24,57 +26,72 @@ function removeOpacity(event) {
 
      //remove appropriate CSS class
 
-    // let element = document.getElementById('dataPrice');
-    //     element.textContent = '';
+    let element = document.getElementById('color-price');
+        element.textContent = '';
         
-    // let color = document.getElementByAlt('color-price');
-    //     color.textContent = ''; 
+    let color = document.getElementById('color-name');
+        color.textContent = ''; 
 
-    // event.preventDefault();    
+    event.preventDefault();    
 }
 
-function getProductInfo(paintColor) {
-    let price;
-    let colorName;  
-    
-    switch (paintColor) {
-        case 'pn1':    
-            // set variables for price and color name and invoke a function to update the price     
-            break;           
-        case 'pn2':
-            // set variables for price and color name and invoke a function to update the price    
-            break;            
-        case 'pn3':
-            // set variables for price and color name and invoke a function to update the price  
-            break;   
-        case 'pn4':
-            // set variables for price and color name and invoke a function to update the price  
-            break;   
-        case 'pn5':
-            // set variables for price and color name and invoke a function to update the price       
-            break;   
-        case 'pn6':
-            // set variables for price and color name and invoke a function to update the price        
-            break;   
-        case 'pn7':
-            // set variables for price and color name and invoke a function to update the price 
-            break;   
-        case 'pn8':
-            // set variables for price and color name and invoke a function to update the price   
-            break;   
-        case 'pn9':
-            // set variables for price and color name and invoke a function to update the price 
-            break;   
-          default:              
-    }
+function getProductInfo(target) {  // select img elements  
+    // let img = document.getElementsByTagName('img')
 
-    function updatePrice(colorName, price)
-    {       
-        let colorPrice = document.querySelector("dataPrice") // select element with corresponding id
-        // display price
-        
-        let color = document.quesrSelector("alt")// select element with corresponding id
-        //display color name
-    }
-    
+
+    // for (var i = 0; i < img.length; i++) {  
+    //     img[i]      
+    // }
+
+   let colorPrice =  document.getElementById('color-price');
+   colorPrice.textContent = target.getAttribute('data-price')
+
+    let colorName = document.getElementById('color-name');
+    colorName.textContent = target.getAttribute('alt');
 }
+// function getProductInfo(price, colorName) {
+//     let price = document.getElementByTagName('img')[0].dataPrice;
+//     let colorName;  
+    
+    // switch (paintColor) {
+
+
+//         case 'pn1':    
+//             // set variables for price and color name and invoke a function to update the price     
+//             break;           
+//         case 'pn2':
+//             // set variables for price and color name and invoke a function to update the price    
+//             break;            
+//         case 'pn3':
+//             // set variables for price and color name and invoke a function to update the price  
+//             break;   
+//         case 'pn4':
+//             // set variables for price and color name and invoke a function to update the price  
+//             break;   
+//         case 'pn5':
+//             // set variables for price and color name and invoke a function to update the price       
+//             break;   
+//         case 'pn6':
+//             // set variables for price and color name and invoke a function to update the price        
+//             break;   
+//         case 'pn7':
+//             // set variables for price and color name and invoke a function to update the price 
+//             break;   
+//         case 'pn8':
+//             // set variables for price and color name and invoke a function to update the price   
+//             break;   
+//         case 'pn9':
+//             // set variables for price and color name and invoke a function to update the price 
+//             break;   
+//           default:              
+    // }
+
+    // function updatePrice(colorName, price)
+    // {       
+    //     let colorPrice = document.getElementById('color-price');
+    //     colorPrice.textContent = price;
+        
+    //     let color = document.getElementById('color-name');
+    //     color.textContent = colorName;
+    // }
+    
